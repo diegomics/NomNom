@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "NomNom"
+dynamic = ["version"]
+description = "A tool for converting genomic data tables into tidy, hierarchical YAML files"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+authors = [
+    {name = "Diego De Panis"},
+]
+keywords = ["genomics", "yaml", "bioinformatics", "data-conversion", "pipeline"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pandas>=2.3",
+    "numpy>=2.3",
+    "openpyxl>=3.1",
+    "xlrd>=2.0",
+    "numbers-parser>=4.16",
+    "odfpy>=1.4",
+    "pyyaml>=6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/diegomics/NomNom"
+Repository = "https://github.com/diegomics/NomNom"
+
+[project.scripts]
+nomnom = "NomNom:main"
+
+[tool.setuptools]
+py-modules = ["NomNom"]
+
+[tool.setuptools.dynamic]
+version = {attr = "NomNom.__version__"}
